@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>model</module>
+        <module>service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -24,7 +25,7 @@
         <cloud.version>Hoxton.RELEASE</cloud.version>
         <alibaba.version>2.2.0.RELEASE</alibaba.version>
         <mybatis-plus.version>3.4.1</mybatis-plus.version>
-        <mysql.version>8.2.0</mysql.version>
+<!--        <mysql.version>8.0.21</mysql.version>-->
         <swagger.version>2.9.2</swagger.version>
         <jwt.version>0.7.0</jwt.version>
         <fastjson.version>1.2.29</fastjson.version>
@@ -66,7 +67,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.version}</version>
+                <version>8.0.21</version>
             </dependency>
 
             <dependency>
@@ -75,11 +76,11 @@
                 <version>2.0.8</version>
             </dependency>
 
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
-                <version>${jwt.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>io.jsonwebtoken</groupId>-->
+<!--                <artifactId>jjwt</artifactId>-->
+<!--                <version>${jwt.version}</version>-->
+<!--            </dependency>-->
 
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
@@ -98,18 +99,18 @@
                 <artifactId>easyexcel</artifactId>
                 <version>${easyexcel.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.aliyun</groupId>
-                <artifactId>aliyun-java-sdk-core</artifactId>
-                <version>${aliyun.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.aliyun</groupId>-->
+<!--                <artifactId>aliyun-java-sdk-core</artifactId>-->
+<!--                <version>${aliyun.version}</version>-->
+<!--            </dependency>-->
 
-            <!--aliyunOSS-->
-            <dependency>
-                <groupId>com.aliyun.oss</groupId>
-                <artifactId>aliyun-sdk-oss</artifactId>
-                <version>${aliyun.oss.version}</version>
-            </dependency>
+<!--            &lt;!&ndash;aliyunOSS&ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>com.aliyun.oss</groupId>-->
+<!--                <artifactId>aliyun-sdk-oss</artifactId>-->
+<!--                <version>${aliyun.oss.version}</version>-->
+<!--            </dependency>-->
 
             <!--日期时间工具-->
             <dependency>
@@ -118,11 +119,11 @@
                 <version>${jodatime.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.xuxueli</groupId>
-                <artifactId>xxl-job-core</artifactId>
-                <version>${xxl-job.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.xuxueli</groupId>-->
+<!--                <artifactId>xxl-job-core</artifactId>-->
+<!--                <version>${xxl-job.version}</version>-->
+<!--            </dependency>-->
             <!--swagger-->
             <dependency>
                 <groupId>io.springfox</groupId>
@@ -130,11 +131,11 @@
                 <version>${swagger.version}</version>
             </dependency>
             <!--swagger ui-->
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>io.springfox</groupId>-->
+<!--                <artifactId>springfox-swagger-ui</artifactId>-->
+<!--                <version>${swagger.version}</version>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 

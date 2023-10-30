@@ -1,9 +1,10 @@
 package me.thinkchao.tckt.vo.activity;
 
-import com.atguigu.ggkt.model.base.BaseEntity;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import me.thinkchao.tckt.model.base.BaseEntity;
 
 @Data
 @ApiModel(description = "CouponInfo")

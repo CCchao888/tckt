@@ -1,11 +1,11 @@
 package me.thinkchao.tckt.model.order;
 
-import com.atguigu.ggkt.model.base.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import me.thinkchao.tckt.model.base.BaseEntity;
 
 import java.math.BigDecimal;
 

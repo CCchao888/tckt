@@ -1,8 +1,8 @@
 package me.thinkchao.tckt.vo.order;
 
-import com.atguigu.ggkt.model.order.OrderInfo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import me.thinkchao.tckt.model.order.OrderInfo;
 
 @Data
 public class OrderInfoVo extends OrderInfo {

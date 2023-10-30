@@ -1,9 +1,10 @@
 package me.thinkchao.tckt.vo.live;
 
-import com.atguigu.ggkt.model.live.LiveCourse;
-import com.atguigu.ggkt.model.vod.Teacher;
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import me.thinkchao.tckt.model.live.LiveCourse;
+import me.thinkchao.tckt.model.vod.Teacher;
 
 @Data
 public class LiveCourseVo extends LiveCourse {

@@ -37,6 +37,13 @@ public class TeacherController {
     // 查询所有讲师 http://localhost:8301/vod/teacher/findAll
     @GetMapping("findAll")
     public Result findAllTeacher(){
+        //模拟异常处理
+//        try{
+//            int i = 10/0;
+//        }catch (Exception e){
+//            throw new TcktException(201,"执行自定义异常");
+//        }
+
         //调用service方法
         List<Teacher> list = teacherService.list();
         return Result.success(list);

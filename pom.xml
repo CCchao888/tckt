@@ -6,6 +6,7 @@
     <modules>
         <module>model</module>
         <module>service</module>
+        <module>common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -37,6 +38,8 @@
         <xxl-job.version>2.3.0</xxl-job.version>
         <aliyun.oss.version>3.9.0</aliyun.oss.version>
     </properties>
+
+
 
     <!--配置dependencyManagement锁定依赖的版本-->
     <dependencyManagement>
@@ -131,11 +134,11 @@
                 <version>${swagger.version}</version>
             </dependency>
             <!--swagger ui-->
-<!--            <dependency>-->
-<!--                <groupId>io.springfox</groupId>-->
-<!--                <artifactId>springfox-swagger-ui</artifactId>-->
-<!--                <version>${swagger.version}</version>-->
-<!--            </dependency>-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

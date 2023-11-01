@@ -39,5 +39,15 @@ public class Result <T>{
         return result;
     }
 
+    //改变状态信息类默认的状态码和信息
+    public Result<T> message(String msg){
+        this.setMessage(msg);
+        return this;
+    }
+    public Result<T> code(Integer code){
+        this.setCode(code);
+        return this;
+    }
+
 
 }

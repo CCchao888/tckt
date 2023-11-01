@@ -89,8 +89,66 @@ public class TeacherController {
             Page<Teacher> page = teacherService.page(pageParam, queryWrapper);
             return Result.success(page);
         }
-
     }
 
+    @ApiOperation("添加讲师")
+    @PostMapping("saveTeacher")
+    public Result saveTeacher(@RequestBody Teacher teacher){
+        boolean isSuccess = teacherService.save(teacher);
+        if(isSuccess){
+            return Result.success(null);
+        }else {
+            return Result.fail(null);
+        }
+    }
+
+    @ApiOperation("根据id查询讲师")
+    @GetMapping("getTeacher/{id}")
+    public Result getTeacher(@PathVariable long id){
+        Teacher teacher = teacherService.getById(id);
+        return Result.success(teacher);
+    }
+    @ApiOperation("修改讲师的最终实现")
+    @PostMapping("updateTeacher")
+    public Result updateTeacher(@RequestBody Teacher teacher){
+        boolean isSuccess = teacherService.updateById(teacher);
+        if(isSuccess){
+            return Result.success(null);
+        }else {
+            return Result.fail(null);
+        }
+    }
+
+    @ApiOperation("批量删除讲师")
+    @DeleteMapping("removeBatch")
+    public Result removeBatch(@RequestBody List<Long> idList){
+        boolean isSuccess = teacherService.removeByIds(idList);
+        if(isSuccess){
+            return Result.success(null);
+        }else {
+            return Result.fail(null);
+        }
+    }
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

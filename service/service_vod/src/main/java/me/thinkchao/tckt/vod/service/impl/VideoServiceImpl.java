@@ -1,5 +1,6 @@
 package me.thinkchao.tckt.vod.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import me.thinkchao.tckt.model.vod.Video;
 import me.thinkchao.tckt.vod.mapper.VideoMapper;
@@ -17,4 +18,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements VideoService {
 
+    //根据课程id删除小节
+    @Override
+    public void removeByCourseId(Long id) {
+        QueryWrapper<Video> wrapper = new QueryWrapper<>();
+        wrapper.eq("course_id", id);
+        baseMapper.delete(wrapper);
+    }
 }

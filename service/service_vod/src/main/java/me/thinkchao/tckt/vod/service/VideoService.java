@@ -13,4 +13,6 @@ import me.thinkchao.tckt.model.vod.Video;
  */
 public interface VideoService extends IService<Video> {
 
+    // 根据课程id删除课程小节
+    void removeByCourseId(Long id);
 }

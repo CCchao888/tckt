@@ -36,4 +36,7 @@ public interface CourseService extends IService<Course> {
 
     // 课程的最终发布
     void publishCourse(Long id);
+
+    // 根据课程id删除课程信息
+    void removeCourseId(Long id);
 }

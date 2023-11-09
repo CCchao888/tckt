@@ -14,5 +14,6 @@ import me.thinkchao.tckt.model.vod.CourseDescription;
 public interface CourseDescriptionService extends IService<CourseDescription> {
 
 
-
+    // 根据课程id删除课程描述
+    void removeByCourseId(Long id);
 }

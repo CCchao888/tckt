@@ -11,10 +11,7 @@ import me.thinkchao.tckt.vo.vod.CourseFormVo;
 import me.thinkchao.tckt.vo.vod.CoursePublishVo;
 import me.thinkchao.tckt.vo.vod.CourseQueryVo;
 import me.thinkchao.tckt.vod.mapper.CourseMapper;
-import me.thinkchao.tckt.vod.service.CourseDescriptionService;
-import me.thinkchao.tckt.vod.service.CourseService;
-import me.thinkchao.tckt.vod.service.SubjectService;
-import me.thinkchao.tckt.vod.service.TeacherService;
+import me.thinkchao.tckt.vod.service.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,6 +41,12 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
 
     @Autowired
     private CourseDescriptionService courseDescriptionService;
+
+    @Autowired
+    private VideoService videoService;
+
+    @Autowired
+    private ChapterService chapterService;
 
     // 点播课程列表
     @Override
@@ -104,6 +107,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         return course.getId();
     }
 
+    // 根据课程id获取课程信息
     @Override
     public CourseFormVo getCourseInfoById(Long id) {
         //得到课程基本信息
@@ -157,6 +161,19 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
             course.setPublishTime(new Date());
             baseMapper.updateById(course);
         }
+    }
+
+    //删除课程
+    @Override
+    public void removeCourseId(Long id) {
+        //根据课程id删除小节
+        videoService.removeByCourseId(id);
+        //根据课程id删除章节
+        chapterService.removeByCourseId(id);
+        //根据课程id删除课程描述
+        courseDescriptionService.removeByCourseId(id);
+        //根据课程id删除课程
+        baseMapper.deleteById(id);
     }
 
     // 根据id获取名称

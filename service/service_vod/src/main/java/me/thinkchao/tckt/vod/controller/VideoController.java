@@ -45,10 +45,10 @@ public class VideoController {
         return Result.success(null);
     }
 
-    @ApiOperation(value = "删除")
+    @ApiOperation(value = "删除小节")
     @DeleteMapping("remove/{id}")
     public Result remove(@PathVariable Long id) {
-        videoService.removeById(id);
+        videoService.removeVideoById(id);
         return Result.success(null);
     }
 

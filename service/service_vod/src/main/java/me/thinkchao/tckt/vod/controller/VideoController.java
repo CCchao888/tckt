@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
  * @author thinkchao
  * @since 2023-11-06
  */
-@CrossOrigin
+//@CrossOrigin
 @RestController
 @RequestMapping("admin/vod/video")
 public class VideoController {

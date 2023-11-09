@@ -23,7 +23,7 @@ import java.util.Map;
  * @since 2023-11-06
  */
 @RestController
-@CrossOrigin
+//@CrossOrigin
 @RequestMapping("admin/vod/course")
 public class CourseController {
 

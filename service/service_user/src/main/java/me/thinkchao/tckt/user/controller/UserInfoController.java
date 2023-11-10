@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-11-10
  */
 @RestController
-@RequestMapping("admin/user/userInfo")
+@RequestMapping("/admin/user/userInfo")
 public class UserInfoController {
 
     @Autowired

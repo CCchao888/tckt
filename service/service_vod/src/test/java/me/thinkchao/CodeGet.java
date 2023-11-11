@@ -21,7 +21,7 @@ public class CodeGet {
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
         //gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setOutputDir("D:\\111java\\springboot2\\tckt\\service\\service_user"+"/src/main/java");
+        gc.setOutputDir("D:\\111java\\springboot2\\tckt\\service\\service_wechat"+"/src/main/java");
 
         gc.setServiceName("%sService");	//去掉Service接口的首字母I
         gc.setAuthor("thinkchao");
@@ -30,7 +30,7 @@ public class CodeGet {
 
         // 3、数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3308/tckt_user?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false");
+        dsc.setUrl("jdbc:mysql://localhost:3308/tckt_wechat?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("123456");
@@ -39,7 +39,7 @@ public class CodeGet {
 
         // 4、包配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName("user"); //模块名
+        pc.setModuleName("wechat"); //模块名
         pc.setParent("me.thinkchao.tckt");
         pc.setController("controller");
         pc.setEntity("entity");
@@ -50,7 +50,7 @@ public class CodeGet {
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
 
-        strategy.setInclude("user_info","user_login_log");
+        strategy.setInclude("menu");
 
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略
 

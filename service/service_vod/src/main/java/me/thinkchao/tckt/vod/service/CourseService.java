@@ -39,4 +39,10 @@ public interface CourseService extends IService<Course> {
 
     // 根据课程id删除课程信息
     void removeCourseId(Long id);
+
+    // 根据课程分类分页查询课程列表
+    Map<String, Object> findPage(Page<Course> pageParam, CourseQueryVo courseQueryVo);
+
+    // 根据课程id查询课程信息
+    Map<String, Object> getInfoById(Long courseId);
 }

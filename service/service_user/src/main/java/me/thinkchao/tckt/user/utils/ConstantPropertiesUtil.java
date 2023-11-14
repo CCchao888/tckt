@@ -2,12 +2,14 @@ package me.thinkchao.tckt.user.utils;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /**
  * Author:chao
  * Date:2023-11-13
  * Description:
  */
+@Component
 public class ConstantPropertiesUtil implements InitializingBean {
     @Value("${wechat.mpAppId}")
     private String appid;

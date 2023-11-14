@@ -13,4 +13,6 @@ import me.thinkchao.tckt.model.user.UserInfo;
  */
 public interface UserInfoService extends IService<UserInfo> {
 
+    //
+    UserInfo getByOpenid(String openId);
 }

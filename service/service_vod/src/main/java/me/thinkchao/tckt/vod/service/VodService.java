@@ -12,4 +12,7 @@ public interface VodService {
 
     // 删除视频
     void removeVideo(String fileId);
+
+    //点播视频的播放接口
+    Object getPlayAuth(Long courseId, Long videoId);
 }

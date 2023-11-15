@@ -9,9 +9,16 @@ import com.tencentcloudapi.vod.v20180717.VodClient;
 import com.tencentcloudapi.vod.v20180717.models.DeleteMediaRequest;
 import com.tencentcloudapi.vod.v20180717.models.DeleteMediaResponse;
 import me.thinkchao.tckt.exception.TcktException;
+import me.thinkchao.tckt.model.vod.Video;
+import me.thinkchao.tckt.vod.service.VideoService;
 import me.thinkchao.tckt.vod.service.VodService;
 import me.thinkchao.tckt.vod.utils.ConstantPropertiesUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Author:chao
@@ -20,6 +27,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class VodServiceImpl implements VodService {
+
+    @Autowired
+    private VideoService videoService;
+
+    @Value("${tencent.video.appId}")
+    private String appId;
+
     // 上传视频
     @Override
     public String uploadVideo() {
@@ -65,6 +79,21 @@ public class VodServiceImpl implements VodService {
             System.out.println(e.toString());
             throw new TcktException(20001, "删除视频失败");
         }
+    }
+
+    //点播视频的播放接口
+    @Override
+    public Object getPlayAuth(Long courseId, Long videoId) {
+        //根据小节id获取小节对象，获取腾讯云视频id
+        Video video = videoService.getById(videoId);
+        if(video == null) {
+            throw new TcktException(20001,"小节信息不存在");
+        }
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("videoSourceId",video.getVideoSourceId());
+        map.put("appId",appId);
+        return map;
     }
 }
 

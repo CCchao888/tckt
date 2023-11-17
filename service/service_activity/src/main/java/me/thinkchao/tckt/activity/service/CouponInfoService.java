@@ -19,4 +19,11 @@ public interface CouponInfoService extends IService<CouponInfo> {
 
     // 分页查询已经使用的优惠券
     IPage<CouponUse> selectCouponUsePage(Page<CouponUse> pageParam, CouponUseQueryVo couponUseQueryVo);
+
+    /**
+     * 更新优惠券使用状态
+     * @param couponUseId
+     * @param orderId
+     */
+    void updateCouponInfoUseStatus(Long couponUseId, Long orderId);
 }

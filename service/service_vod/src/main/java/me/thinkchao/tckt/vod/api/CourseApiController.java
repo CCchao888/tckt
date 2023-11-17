@@ -36,6 +36,15 @@ public class CourseApiController {
     @Autowired
     private ChapterService chapterService;
 
+
+    @ApiOperation("根据ID查询课程")
+    @GetMapping("inner/getById/{courseId}")
+    public Course getById(
+            @ApiParam(value = "课程ID", required = true)
+            @PathVariable Long courseId){
+        return courseService.getById(courseId);
+    }
+
     //根据课程分类查询课程列表（分页）
     @ApiOperation("根据课程分类查询课程列表")
     @GetMapping("{subjectParentId}/{page}/{limit}")

@@ -25,7 +25,7 @@ public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
 
-    //提高user_id获取用户信息
+    //通过user_id获取用户信息
     @ApiOperation(value = "获取")
     @GetMapping("inner/getById/{id}")
     public UserInfo getById(@PathVariable Long id) {

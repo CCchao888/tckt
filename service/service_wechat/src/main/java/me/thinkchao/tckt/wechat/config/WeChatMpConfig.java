@@ -7,14 +7,14 @@ import me.chanjar.weixin.mp.config.impl.WxMpDefaultConfigImpl;
 import me.thinkchao.tckt.wechat.utils.ConstantPropertiesUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * Author:chao
  * Date:2023-11-12
  * Description:
  */
-@Component
+@Configuration
 public class WeChatMpConfig {
 
     @Autowired

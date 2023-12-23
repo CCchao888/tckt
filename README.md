@@ -2,7 +2,8 @@
 
 thinkchao_online_system，基于spring boot的在线学习平台
 
-## 编程流程
-1. 数据库设计-->创建数据库表
-2. 搭建工程-->父工程springboot、各个子模块maven
+目前项目已经上线（由于服务器资源有限，目前仅部署部分服务）：http://tckt.thinkchao.online
+
+具体的提交记录，请切换至dev分支。
+
 
